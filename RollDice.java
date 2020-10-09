@@ -13,15 +13,25 @@ import java.util.Scanner;
 */
 public class RollDice {
   
+  public static int genRandNum(int userMax) {
+    
+    //initialize variables
+    int min = 0;
+    
+    //generate the random number
+    int randVal = (int) (min + (Math.random() * userMax + 1));
+    
+    //return the random number to the calling method
+    return randVal;
+  }
+  
   /**
    * Main portion of code.
   */
-  
   public static void main(String[] args) {
     
     //declare and initialize variables
     boolean invalid = true;
-    int min = 0;
     int userMax = 0;
     
     //prompt the user for the max value
@@ -44,7 +54,7 @@ public class RollDice {
     }
     
     //generate the random number
-    int randVal = (int) (min + (Math.random() * userMax + 1));
+    int randVal = genRandNum(userMax);
     
     //tell the user what the random value is
     System.out.println("Random Value: " + randVal);
